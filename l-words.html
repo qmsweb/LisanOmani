@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الكلمات الدخيلة — اللسان العماني</title>
+  <meta name="description" content="دليل الكلمات الدخيلة والمعرّبة في العربية: أصلها الأجنبي، وكلمتها الأصلية، ومعناها أو استعمالها، مع إمكانية التصفية بحسب اللغة الأصلية.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="theme-color" content="#0e6666">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="الكلمات الدخيلة — اللسان العماني">
+  <meta property="og:description" content="دليل الكلمات الدخيلة والمعرّبة في العربية: أصلها الأجنبي، وكلمتها الأصلية، ومعناها.">
+  <meta property="og:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <meta property="og:url" content="https://qmsweb.github.io/LisanOmani/l-words.html">
+  <meta property="og:locale" content="ar_OM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="الكلمات الدخيلة — اللسان العماني">
+  <meta name="twitter:description" content="دليل الكلمات الدخيلة والمعرّبة في العربية: أصلها الأجنبي، وكلمتها الأصلية، ومعناها.">
+  <meta name="twitter:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-nav="tools">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="مسار التصفح">
+          <a href="index.html">الرئيسية</a><span>›</span><a href="tools.html">الأدوات</a><span>›</span><span>الكلمات الدخيلة</span>
+        </nav>
+        <h1>الكلمات الدخيلة على العربية</h1>
+        <p>كلمات اقترضتها العربية من لغات أخرى، أو عرّبتها وصاغتها على أوزانها. ابحث بالكلمة العربية أو بمعناها أو بأصلها الأجنبي.</p>
+      </div>
+    </section>
+
+    <section class="tool-shell">
+      <div class="container">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>ابحث في المعجم</h2>
+              <p id="data-count">تُحمَّل القائمة…</p>
+            </div>
+            <span class="badge badge-gold">50 كلمة موثّقة</span>
+          </div>
+
+          <div class="search-form">
+            <div class="field">
+              <label for="word-input">الكلمة أو المعنى</label>
+              <input type="search" id="word-input" placeholder="مثل: تلفاز، حاسوب، خزانة…" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="origin-type">اللغة الأصلية</label>
+              <select id="origin-type">
+                <option value="all">جميع الأصول</option>
+              </select>
+            </div>
+            <button class="btn" type="button" id="search-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+              بحث
+            </button>
+          </div>
+
+          <div class="suggestions">
+            <span>جرّب:</span>
+            <button class="chip" type="button" data-word="تلفاز">تلفاز</button>
+            <button class="chip" type="button" data-word="دولاب">دولاب</button>
+            <button class="chip" type="button" data-word="فنجان">فنجان</button>
+            <button class="chip" type="button" data-word="إنترنت">إنترنت</button>
+            <button class="chip" type="button" data-word="بلكونة">بلكونة</button>
+          </div>
+        </div>
+
+        <div class="results">
+          <div class="results-toolbar">
+            <div class="results-count" id="results-count"></div>
+            <button class="chip" type="button" id="reset-btn" hidden>إعادة ضبط البحث</button>
+          </div>
+          <div class="results-grid" id="results-container" aria-live="polite">
+            <div class="loading-state"><span class="spinner"></span> تُحمَّل الكلمات…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/loanwords.js"></script>
+</body>
+</html>

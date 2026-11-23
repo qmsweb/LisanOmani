@@ -1,0 +1,45 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#032f2f"/>
+      <stop offset=".55" stop-color="#0a5d5d"/>
+      <stop offset="1" stop-color="#0e6666"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".15" cy=".2" r=".7">
+      <stop offset="0" stop-color="#7cd3d3" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#7cd3d3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b9b9b"/>
+      <stop offset="1" stop-color="#7cd3d3"/>
+    </linearGradient>
+    <pattern id="waves" width="180" height="180" patternUnits="userSpaceOnUse">
+      <path d="M0 90c22 0 22-44 45-44s23 44 45 44 23-44 45-44 23 44 45 44" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="1.2"/>
+      <path d="M0 140c22 0 22-44 45-44s23 44 45 44 23-44 45-44 23 44 45 44" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1.2"/>
+      <path d="M0 40c22 0 22-44 45-44s23 44 45 44 23-44 45-44 23 44 45 44" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#waves)"/>
+  <circle cx="1020" cy="120" r="230" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+  <circle cx="1020" cy="120" r="300" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+  <circle cx="120" cy="560" r="210" fill="none" stroke="#c9972f" stroke-opacity=".18"/>
+
+  <g transform="translate(1008,92)">
+    <rect width="96" height="96" rx="26" fill="url(#mark)"/>
+    <path d="M58 20v36a16 16 0 0 1-16 16h-7" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="69" cy="25" r="6" fill="#f2c96b"/>
+  </g>
+
+  <text x="1104" y="288" text-anchor="end" font-family="Amiri, 'Times New Roman', serif" font-size="96" font-weight="700" fill="#ffffff">اللسان العماني</text>
+  <text x="1104" y="386" text-anchor="end" font-family="Cairo, Arial, sans-serif" font-size="28" font-weight="600" fill="#ddf5f1">منصة الظواهر الدلالية في اللغة العربية</text>
+
+  <g font-family="Cairo, Arial, sans-serif" font-size="21" font-weight="700" fill="#f8edd2" text-anchor="end"><text x="1104" y="460">الترادف والتضاد</text><text x="878" y="460">الكلمات الدخيلة</text><text x="652" y="460">الحقول الدلالية</text><text x="426" y="460">ألعاب لغوية</text><text x="200" y="460">بحث شامل</text></g>
+
+  <rect x="96" y="520" width="1008" height="1" fill="#ffffff" fill-opacity=".15"/>
+  <text x="1104" y="566" text-anchor="end" font-family="Cairo, Arial, sans-serif" font-size="19" font-weight="600" fill="#b6e8e3">مشروع طلابي بجامعة الشرقية · lisanomani</text>
+  <text x="96" y="566" font-family="Cairo, Arial, sans-serif" font-size="19" font-weight="700" fill="#c9972f">الإصدار 1.0</text>
+</svg>
+
+

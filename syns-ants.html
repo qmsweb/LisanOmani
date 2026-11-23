@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الترادف والتضاد — اللسان العماني</title>
+  <meta name="description" content="ابحث عن الكلمات العربية واكشف مرادفاتها وأضدادها في قاعدة تضم أكثر من مئة مدخل دلالي، مع دعم البحث داخل المرادفات.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="theme-color" content="#0e6666">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="الترادف والتضاد — اللسان العماني">
+  <meta property="og:description" content="ابحث عن الكلمات العربية واكشف مرادفاتها وأضدادها في قاعدة تضم أكثر من مئة مدخل دلالي.">
+  <meta property="og:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <meta property="og:url" content="https://qmsweb.github.io/LisanOmani/syns-ants.html">
+  <meta property="og:locale" content="ar_OM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="الترادف والتضاد — اللسان العماني">
+  <meta name="twitter:description" content="ابحث عن الكلمات العربية واكشف مرادفاتها وأضدادها في قاعدة تضم أكثر من مئة مدخل دلالي.">
+  <meta name="twitter:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-nav="tools">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="مسار التصفح">
+          <a href="index.html">الرئيسية</a><span>›</span><a href="tools.html">الأدوات</a><span>›</span><span>الترادف والتضاد</span>
+        </nav>
+        <h1>الترادف والتضاد</h1>
+        <p>أدخل كلمة عربية لتعرف مرادفاتها وأضدادها، أو ابحث عن كلمة داخل المرادفات للوصول إلى مدخلها الأصلي.</p>
+      </div>
+    </section>
+
+    <section class="tool-shell">
+      <div class="container">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>ابحث عن كلمة</h2>
+              <p>يتجاهل البحث التشكيل وفروق الهمزات والتاء المربوطة والياء.</p>
+            </div>
+            <span class="badge" id="data-count">110 مدخلًا</span>
+          </div>
+
+          <form class="search-form" id="search-form" role="search">
+            <div class="field">
+              <label for="word-input">الكلمة</label>
+              <input id="word-input" name="q" type="search" placeholder="مثل: نور، كريم، صدق…" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label for="relation-type">نوع العلاقة</label>
+              <select id="relation-type">
+                <option value="all">جميع العلاقات</option>
+                <option value="synonym">المرادفات فقط</option>
+                <option value="antonym">الأضداد فقط</option>
+              </select>
+            </div>
+            <button class="btn" type="submit" id="analyze-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+              بحث
+            </button>
+          </form>
+
+          <div class="suggestions" id="suggestions">
+            <span>جرّب:</span>
+          </div>
+        </div>
+
+        <div class="results" id="results" aria-live="polite">
+          <div class="results-toolbar" id="results-toolbar" hidden>
+            <div class="results-count" id="results-count"></div>
+          </div>
+          <div class="results-grid" id="results-container">
+            <div class="empty-state">
+              <b>ابدأ بالبحث</b>
+              اكتب كلمة عربية في الحقل أعلاه، ثم اختر نوع العلاقة واضغط «بحث».
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/syns-ants.js"></script>
+</body>
+</html>

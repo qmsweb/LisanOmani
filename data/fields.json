@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "id": "truth", "title": "حقل الصدق", "file": "data/hqool/1.json", "summary": "الصدق وما يثمره من ثقة واحترام ووفاء." },
+    { "id": "knowledge", "title": "حقل العلم", "file": "data/hqool/2.json", "summary": "العلم وتعليمه وأدواته وثمرته." },
+    { "id": "revolution", "title": "حقل الثورة", "file": "data/hqool/3.json", "summary": "مفاهيم الثورة وأحداثها ونتائجها." },
+    { "id": "joy", "title": "حقل الفرح", "file": "data/hqool/4.json", "summary": "الفرح والبهجة والسرور وأسباب ظهوره." },
+    { "id": "nature", "title": "حقل الطبيعة", "file": "data/hqool/5.json", "summary": "جبل وبحر وشجر ومطر وجمال وسكينة." }
+  ]
+}

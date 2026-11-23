@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "id": "nature",
+      "title": "حقل الطبيعة",
+      "description": "مفاهيم الطبيعة العمانية: جبل وبحر وشجر ومطر، وما تثمره من جمال وسكينة.",
+      "nodes": [
+        { "id": "1", "label": "الطبيعة", "type": "core", "size": 22, "definition": "العالم المادي وما فيه من أرض وسماء وماء ونبات.", "examples": ["جمال الطبيعة العمانية"] },
+        { "id": "2", "label": "الجبل", "type": "actor", "size": 16, "definition": "مرتفع من الأرض شديد الارتفاع والانحدار.", "examples": ["جبل شمس"] },
+        { "id": "3", "label": "البحر", "type": "actor", "size": 16, "definition": "الماء الواسع المالح الذي تغطيه الأرض.", "examples": ["بحر عُمان"] },
+        { "id": "4", "label": "الشجر", "type": "actor", "size": 15, "definition": "النبات ذو الساق الخشبية والفروع والأوراق.", "examples": ["شجر اللبان"] },
+        { "id": "5", "label": "المطر", "type": "event", "size": 16, "definition": "الماء المنزل من السحاب.", "examples": ["مطر الخير"] },
+        { "id": "6", "label": "النسيم", "type": "method", "size": 13, "definition": "هبوب الهواء اللطيف.", "examples": ["نسيم البحر"] },
+        { "id": "7", "label": "الجمال", "type": "result", "size": 15, "definition": "حسن يدركه الحس ويستلذه القلب.", "examples": ["جمال الوادي"] },
+        { "id": "8", "label": "السكينة", "type": "emotion", "size": 14, "definition": "طمأنينة القلب وراحته.", "examples": ["سكينة الغروب"] }
+      ],
+      "links": [
+        { "source": "1", "target": "2", "weight": 2 },
+        { "source": "1", "target": "3", "weight": 2 },
+        { "source": "1", "target": "4", "weight": 2 },
+        { "source": "1", "target": "5", "weight": 3 },
+        { "source": "3", "target": "6", "weight": 2 },
+        { "source": "2", "target": "7", "weight": 2 },
+        { "source": "3", "target": "7", "weight": 2 },
+        { "source": "5", "target": "8", "weight": 2 },
+        { "source": "7", "target": "8", "weight": 1 }
+      ]
+    }
+  ]
+}
