@@ -1,0 +1,24 @@
+{
+  "note": "مادة أولية قابلة للتصحيح والتوسعة. المفردات متداولة في اللهجة العمانية، وبعضها مشترك خليجيًا.",
+  "updated": "2026-11",
+  "entries": [
+    { "id": "taw", "word": "تو", "meaning": "الآن، في هذه اللحظة", "example": "تو وصلت البيت.", "region": "عامة", "note": "من أبرز المفردات العمانية." },
+    { "id": "baghi", "word": "باغي", "meaning": "أريد، أرغب", "example": "باغي أروح السوق.", "region": "عامة", "note": "" },
+    { "id": "hal", "word": "حال", "meaning": "إلى، نحو", "example": "سير حال البيت.", "region": "عامة", "note": "تُستعمل للاتجاه." },
+    { "id": "ghawi", "word": "غاوي", "meaning": "جميل، حسن", "example": "هذا ثوب غاوي.", "region": "عامة", "note": "" },
+    { "id": "dook", "word": "دوك", "meaning": "خذ", "example": "دوك المفتاح.", "region": "عامة", "note": "" },
+    { "id": "yishil", "word": "يشل", "meaning": "يأخذ، يحمل", "example": "يشل أغراضه ويطلع.", "region": "عامة", "note": "" },
+    { "id": "ma-shi", "word": "ما شي", "meaning": "لا يوجد، لا شيء", "example": "ما شي ماي في الحوش.", "region": "عامة", "note": "" },
+    { "id": "seer", "word": "سير", "meaning": "اذهب", "example": "سير حال السوق.", "region": "عامة", "note": "" },
+    { "id": "dreesha", "word": "دريشة", "meaning": "نافذة", "example": "افتح الدريشة.", "region": "مسقط والباطنة", "note": "من المفردات المشتركة خليجيًا." },
+    { "id": "karfaya", "word": "كرفاية", "meaning": "سرير", "example": "نام على الكرفاية.", "region": "الباطنة ومسقط", "note": "" },
+    { "id": "aqab", "word": "عقب", "meaning": "بعد", "example": "نلتقي عقب الصلاة.", "region": "عامة", "note": "" },
+    { "id": "tah", "word": "طاح", "meaning": "وقع، سقط", "example": "طاح من الدرج.", "region": "عامة", "note": "" },
+    { "id": "harma", "word": "حرمة", "meaning": "امرأة", "example": "الحرمة رايحة السوق.", "region": "عامة", "note": "استعمال شائع في الخليج." },
+    { "id": "floos", "word": "فلوس", "meaning": "مال، نقود", "example": "ما معي فلوس.", "region": "عامة", "note": "" },
+    { "id": "zain", "word": "زين", "meaning": "جيد، حسن", "example": "الغدا زين.", "region": "عامة", "note": "" },
+    { "id": "yisawwi", "word": "يسوي", "meaning": "يفعل، يصنع", "example": "شو تسوي الحين؟", "region": "عامة", "note": "" },
+    { "id": "shu", "word": "شو", "meaning": "ماذا", "example": "شو تريد؟", "region": "عامة", "note": "" },
+    { "id": "wain", "word": "وين", "meaning": "أين", "example": "وين رايح؟", "region": "عامة", "note": "" }
+  ]
+}

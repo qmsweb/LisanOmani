@@ -244,23 +244,22 @@ code {
 }
 .intro p {
   margin: 0 auto;
-  max-width: 40ch;
+  max-width: 44ch;
   color: var(--muted);
   font-size: clamp(.95rem, 1.4vw, 1.06rem);
   line-height: 1.9;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 760px;
+  margin-inline: auto;
   padding-bottom: clamp(56px, 9vw, 110px);
 }
 
 .card {
-  flex: 0 1 330px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -948,6 +947,227 @@ tbody tr:last-child td { border-bottom: 0; }
    ============================================================ */
 
 
+
+/* ============================================================
+   المعجم اللهجي
+   ============================================================ */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+}
+.filter-bar .field { flex: 1 1 260px; }
+.filter-bar .filter-region { flex: 0 1 220px; }
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.entry {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  animation: rise .4s var(--ease) backwards;
+}
+.entry-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.entry-word { margin: 0; font-size: 1.3rem; font-weight: 600; }
+.entry-meaning { margin: 0 0 8px; color: var(--ink); font-size: .95rem; }
+.entry-example {
+  margin: 0 0 8px;
+  padding-inline-start: 10px;
+  border-inline-start: 2px solid var(--accent-soft);
+  color: var(--muted);
+  font-size: .9rem;
+}
+.entry-note { margin: 0; color: #9a9e94; font-size: .78rem; }
+
+/* ============================================================
+   الأمثال
+   ============================================================ */
+
+.proverb-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.proverb {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  animation: rise .4s var(--ease) backwards;
+}
+.proverb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.proverb-num { color: #b3b6ad; font-size: .78rem; }
+.proverb-text { margin: 0 0 8px; font-size: 1.12rem; font-weight: 600; line-height: 1.8; }
+.proverb-meaning { margin: 0; color: var(--muted); font-size: .9rem; }
+
+/* ============================================================
+   الخريطة
+   ============================================================ */
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.map-side { padding: 18px; }
+.map-side-title { font-size: 1rem; margin: 0 0 10px; }
+.region-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-inline-end: 0;
+}
+.region-btn {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  font-family: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.region-btn:hover { background: #f6f5f0; }
+.region-btn.active { background: var(--accent-soft); border-color: #cfdcc9; }
+.region-btn-name { font-size: .92rem; color: var(--ink); }
+.region-btn.active .region-btn-name { font-weight: 600; color: var(--accent-ink); }
+.region-btn-capital { font-size: .72rem; color: var(--muted); }
+
+.region-detail {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+.region-name { font-size: 1.1rem; margin: 0 0 2px; }
+.region-capital { margin: 0 0 8px; color: var(--muted); font-size: .78rem; }
+.region-note { margin: 0; color: var(--ink); font-size: .88rem; line-height: 1.85; }
+
+.map-canvas { min-width: 0; }
+#map {
+  height: 560px;
+  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  background: #eceae3;
+  z-index: 0;
+}
+.map-note { margin: 8px 2px 0; }
+.map-fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 20px;
+  color: var(--muted);
+  text-align: center;
+}
+.leaflet-container { font-family: inherit; }
+.leaflet-control-attribution { font-size: 10px; }
+
+/* ============================================================
+   المساعد الذكي
+   ============================================================ */
+
+.chat-panel { max-width: 780px; margin-inline: auto; }
+.chat-log {
+  height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 2px 12px;
+  scroll-behavior: smooth;
+}
+.msg {
+  max-width: 86%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: .92rem;
+  line-height: 1.85;
+  animation: rise .25s var(--ease) backwards;
+}
+.msg p { margin: 0 0 6px; }
+.msg p:last-child { margin-bottom: 0; }
+.msg.bot {
+  align-self: flex-start;
+  background: #f5f4ef;
+  border: 1px solid var(--line-soft);
+}
+.msg.user {
+  align-self: flex-end;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+.msg-title { font-size: 1.02rem; font-weight: 600; color: var(--ink); }
+.msg-ex { color: var(--muted); font-size: .88rem; }
+.msg-meta { color: #8d9187; font-size: .78rem; }
+.msg-link { font-size: .85rem; }
+.msg-link a { color: var(--accent); }
+.msg-sep { border: 0; border-top: 1px solid var(--line); margin: 10px 0; }
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+.chat-suggestions button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: .8rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.chat-suggestions button:hover { background: var(--accent-soft); border-color: #cfdcc9; }
+
+.chat-form { display: flex; gap: 8px; }
+.chat-form input { flex: 1; min-width: 0; }
+.chat-form .btn { flex: none; }
+.chat-note { margin: 10px 0 0; }
+
+.typing { display: inline-flex; gap: 4px; align-items: center; height: 18px; }
+.typing i {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #a3a79d;
+  animation: blink 1s infinite ease-in-out;
+}
+.typing i:nth-child(2) { animation-delay: .15s; }
+.typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink {
+  0%, 80%, 100% { opacity: .25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-2px); }
+}
+
 /* ============================================================
    الحركة
    ============================================================ */
@@ -985,7 +1205,7 @@ tbody tr:last-child td { border-bottom: 0; }
 ::selection { transition: background .2s ease; }
 
 @media (max-width: 900px) {
-  .card { flex: 0 1 300px; }
+  .cards { max-width: 620px; }
   .fields-layout { grid-template-columns: 1fr; }
   .fields-side { position: static; }
   .fields-list { flex-direction: row; flex-wrap: wrap; }
@@ -1014,7 +1234,8 @@ tbody tr:last-child td { border-bottom: 0; }
   .intro p { font-size: .97rem; max-width: 30ch; }
 
   .cards { gap: 12px; padding-bottom: 44px; }
-  .card { flex: 1 1 100%; padding: 22px 18px 20px; border-radius: 16px; }
+  .cards { grid-template-columns: 1fr; max-width: none; }
+  .card { padding: 22px 18px 20px; border-radius: 16px; }
   .card-icon { width: 52px; height: 52px; margin-bottom: 12px; }
   .card-icon svg { width: 26px; height: 26px; }
   .card h3 { font-size: 1.06rem; margin-bottom: 6px; }
@@ -1070,6 +1291,27 @@ tbody tr:last-child td { border-bottom: 0; }
   .footer-nav { gap: 6px 14px; }
   .footer-nav a { font-size: .82rem; }
   .footer-note { font-size: .74rem; }
+
+  .filter-bar .field, .filter-bar .filter-region { flex: 1 1 100%; }
+  .entry-grid, .proverb-list { grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+  .entry, .proverb { padding: 18px; border-radius: 14px; }
+
+  .map-layout { grid-template-columns: 1fr; gap: 12px; }
+  .map-canvas { order: -1; }
+  #map { height: 340px; border-radius: 14px; }
+  .map-side { padding: 14px; }
+  .region-list {
+    max-height: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .region-btn { padding: 7px 8px; }
+  .region-btn-capital { display: none; }
+
+  .chat-log { height: 340px; }
+  .msg { max-width: 92%; font-size: .9rem; }
+  .chat-form .btn { padding: 10px 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

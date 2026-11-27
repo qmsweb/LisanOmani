@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>المعجم اللهجي — اللسان العماني</title>
+  <meta name="description" content="معجم المفردات اللهجية العمانية: المعنى والشاهد ومنطقة التداول.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="المعجم اللهجي — اللسان العماني">
+  <meta property="og:description" content="معجم المفردات اللهجية العمانية: المعنى والشاهد ومنطقة التداول.">
+  <meta property="og:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <meta property="og:url" content="https://qmsweb.github.io/LisanOmani/dialect.html">
+  <meta property="og:locale" content="ar_OM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="المعجم اللهجي — اللسان العماني">
+  <meta name="twitter:description" content="معجم المفردات اللهجية العمانية: المعنى والشاهد ومنطقة التداول.">
+  <meta name="twitter:image" content="https://qmsweb.github.io/LisanOmani/assets/img/og-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-nav="dialect">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="مسار التصفح">
+          <a href="index.html">الرئيسية</a><span>›</span><span>المعجم اللهجي</span>
+        </nav>
+        <h1>المعجم اللهجي</h1>
+        <p>مفردات من اللهجة العمانية، بمعانيها وشواهدها ومناطق تداولها.</p>
+      </div>
+    </section>
+
+    <section class="tool-shell">
+      <div class="container">
+        <div class="panel">
+          <div class="filter-bar">
+            <div class="field">
+              <label for="dialect-q">ابحث في المفردات</label>
+              <input id="dialect-q" type="search" placeholder="اكتب كلمة أو معنى… تو، باغي، نافذة" autocomplete="off">
+            </div>
+            <div class="field filter-region">
+              <label for="dialect-region">المنطقة</label>
+              <select id="dialect-region">
+                <option value="">كل المناطق</option>
+              </select>
+            </div>
+          </div>
+          <div class="results-toolbar" style="margin-top:14px">
+            <span class="results-count"><b id="dialect-count">0</b> مفردة</span>
+            <span class="small muted" id="dialect-note"></span>
+          </div>
+        </div>
+
+        <div id="dialect-results" class="entry-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/dialect.js"></script>
+</body>
+</html>

@@ -8,8 +8,10 @@
 
   const NAV = [
     { href: 'index.html', label: 'الرئيسية', nav: 'home' },
-    { href: 'tools.html', label: 'الأدوات', nav: 'tools' },
-    { href: 'search.html', label: 'البحث الشامل', nav: 'search' },
+    { href: 'dialect.html', label: 'المعجم اللهجي', nav: 'dialect' },
+    { href: 'map.html', label: 'الخريطة', nav: 'map' },
+    { href: 'proverbs.html', label: 'الأمثال', nav: 'proverbs' },
+    { href: 'assistant.html', label: 'المساعد الذكي', nav: 'assistant' },
     { href: 'about.html', label: 'عن المشروع', nav: 'about' },
     { href: 'contact.html', label: 'اتصل بنا', nav: 'contact' }
   ];
