@@ -79,9 +79,8 @@
 
   <script>
     (function () {
-      var segments = window.location.pathname.split('/').filter(Boolean);
-      var isProjectPage = /\.github\.io$/i.test(window.location.hostname);
-      var base = isProjectPage && segments.length ? '/' + segments[0] + '/' : './';
+      var base = window.location.pathname.replace(/[^/]*$/, '');
+      if (!base) base = './';
       document.querySelectorAll('[data-home]').forEach(function (link) { link.href = base; });
       document.querySelectorAll('[data-search]').forEach(function (link) { link.href = base + 'search.html'; });
     })();
