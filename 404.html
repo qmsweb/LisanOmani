@@ -7,97 +7,74 @@
   <meta name="googlebot" content="noindex, nofollow">
   <title>الصفحة غير موجودة — اللسان العماني</title>
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <meta name="theme-color" content="#f2ece0">
+  <meta name="theme-color" content="#f7f6f2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --paper: #f2ece0;
-      --ink: #191510;
-      --accent: #9c3b1b;
-      --muted: #6d6455;
-      --line: #d5cab7;
-    }
+    :root { --bg:#f7f6f2; --card:#fff; --ink:#1b1d1a; --muted:#6f746a; --accent:#44603f; --accent-soft:#ebf1e8; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 32px 20px;
-      background: var(--paper);
+      padding: 28px 18px;
+      background: var(--bg);
       color: var(--ink);
       font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
-      line-height: 1.85;
+      line-height: 1.9;
     }
-    .sheet {
-      width: min(560px, 100%);
-      background: #fbf7ef;
-      border: 1px solid var(--ink);
-      border-top: 3px solid var(--accent);
-      padding: clamp(28px, 5vw, 48px);
+    .box {
+      width: min(440px, 100%);
+      background: var(--card);
+      border: 1px solid rgba(25,28,24,.04);
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(25,28,24,.06);
+      padding: 40px 28px;
       text-align: center;
     }
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .66rem;
-      letter-spacing: .1em;
-      color: var(--muted);
-    }
-    .code {
-      font-family: 'Aref Ruqaa', serif;
-      font-size: clamp(4.5rem, 16vw, 7rem);
-      line-height: 1;
+    .mark {
+      width: 52px; height: 52px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--accent-soft);
       color: var(--accent);
-      margin: 0 0 8px;
+      display: grid; place-items: center;
+      font-size: 1.5rem; font-weight: 600;
     }
-    h1 { font-size: 1.3rem; font-weight: 600; margin: 0 0 8px; }
+    h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 6px; }
     p { color: var(--muted); font-size: .92rem; margin: 0 0 24px; }
     .actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 10px 20px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: var(--paper);
+      display: inline-flex; align-items: center;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
       font-size: .9rem;
       font-weight: 500;
-      transition: background .2s ease, border-color .2s ease;
     }
-    .btn:hover { background: var(--accent); border-color: var(--accent); }
-    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-    .btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-    .brand {
-      margin-top: 28px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-size: .78rem;
-      color: var(--muted);
-    }
-    .brand b { font-family: 'Aref Ruqaa', serif; font-size: 1.1rem; color: var(--ink); font-weight: 700; }
+    .btn:hover { background: #33482f; border-color: #33482f; }
+    .btn-ghost { background: #fff; border-color: #e6e4dc; color: var(--ink); }
+    .btn-ghost:hover { background: var(--bg); color: var(--ink); }
+    .note { margin-top: 24px; font-size: .8rem; color: #9a9e94; }
   </style>
 </head>
 <body>
-  <main class="sheet">
-    <div class="meta"><span>خطأ 404</span><span>اللسان العماني</span></div>
-    <p class="code">404</p>
+  <main class="box">
+    <div class="mark" aria-hidden="true">ل</div>
     <h1>هذه الصفحة غير موجودة</h1>
-    <p>الرابط غير صحيح أو أن الصفحة نُقلت. يمكنك العودة إلى الرئيسية أو البحث في المنصة.</p>
+    <p>الرابط غير صحيح أو أن الصفحة نُقلت.</p>
 
     <div class="actions">
       <a class="btn" href="/" data-home>العودة إلى الرئيسية</a>
       <a class="btn btn-ghost" href="/" data-search>البحث الشامل</a>
     </div>
 
-    <div class="brand"><b>اللسان العماني</b> · منصة الظواهر الدلالية</div>
+    <p class="note">اللسان العماني</p>
   </main>
 
   <script>
