@@ -68,10 +68,21 @@
       return;
     }
 
-    map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true }).setView([20.8, 56.4], 6);
+    const OMAN_BOUNDS = [[15.0, 51.0], [27.4, 60.9]];
+
+    map = L.map(mapEl, {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      minZoom: 6,
+      maxZoom: 11,
+      maxBounds: OMAN_BOUNDS,
+      maxBoundsViscosity: 1.0
+    }).setView([20.8, 56.4], 6);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 11,
+      noWrap: true,
+      bounds: [[14.5, 50.5], [28.0, 61.5]],
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
