@@ -1,4 +1,3 @@
+# اللسان العماني — نسخة مراجعة غير مفهرسة
 User-agent: *
-Allow: /
-
-Sitemap: https://qmsweb.github.io/LisanOmani/sitemap.xml
+Disallow: /

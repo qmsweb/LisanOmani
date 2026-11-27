@@ -1,23 +1,23 @@
 /* ============================================================
-   اللسان العماني — السكربت المشترك
+   اللسان العماني — السكربت المشترك · نظام «الطبعة»
    ============================================================ */
 
 (function () {
   'use strict';
 
   const NAV = [
-    { href: 'index.html', label: 'الرئيسية', nav: 'home' },
-    { href: 'tools.html', label: 'الأدوات', nav: 'tools' },
-    { href: 'search.html', label: 'البحث الشامل', nav: 'search' },
-    { href: 'about.html', label: 'عن المشروع', nav: 'about' },
-    { href: 'contact.html', label: 'اتصل بنا', nav: 'contact' }
+    { href: 'index.html', label: 'الرئيسية', nav: 'home', num: '01' },
+    { href: 'tools.html', label: 'الأدوات', nav: 'tools', num: '02' },
+    { href: 'search.html', label: 'البحث الشامل', nav: 'search', num: '03' },
+    { href: 'about.html', label: 'عن المشروع', nav: 'about', num: '04' },
+    { href: 'contact.html', label: 'اتصل بنا', nav: 'contact', num: '05' }
   ];
 
   const LOGO_MARK = `
     <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M24.5 7.5v17.2a7.8 7.8 0 0 1-7.8 7.8h-3.4"
-            fill="none" stroke="#ffffff" stroke-width="4.6" stroke-linecap="round"/>
-      <circle cx="29.4" cy="9.4" r="2.7" fill="#f2c96b"/>
+      <path d="M25 8v16.6a7.6 7.6 0 0 1-7.6 7.6h-3.2"
+            fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round"/>
+      <circle cx="29.6" cy="9.4" r="2.4" fill="#c8804f"/>
     </svg>`;
 
   function brandHref() {
@@ -27,7 +27,8 @@
   function navHtml(current) {
     return NAV.map(function (item) {
       const currentAttr = item.nav === current ? ' aria-current="page"' : '';
-      return `<a href="${item.href}"${currentAttr}>${item.label}</a>`;
+      const currentNum = item.nav === current ? `<span class="sr-only">(الصفحة الحالية)</span>` : '';
+      return `<a href="${item.href}"${currentAttr}><sup>${item.num}</sup>${item.label}${currentNum}</a>`;
     }).join('');
   }
 
@@ -37,31 +38,39 @@
         <div class="drawer-head">
           <a class="brand" href="${brandHref()}" aria-label="اللسان العماني — الرئيسية">
             <span class="brand-mark">${LOGO_MARK}</span>
-            <span class="brand-text"><strong>اللسان العماني</strong><small>منصة الظواهر الدلالية</small></span>
+            <span class="brand-text"><strong>اللسان العماني</strong></span>
           </a>
           <button class="drawer-close" id="drawer-close" aria-label="إغلاق القائمة">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
         </div>
         <nav class="drawer-nav" aria-label="التنقل في الموقع">${navHtml(current)}</nav>
+        <div class="drawer-foot">نسخة مراجعة · لا تُفهرس في محركات البحث</div>
       </div>`;
   }
 
   function headerHtml(current) {
     return `
       <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+      <div class="topbar">
+        <div class="container topbar-inner">
+          <span class="mono">طبعة 2026</span>
+          <span class="center"><i class="dot"></i> نسخة مراجعة — لا تظهر في محركات البحث</span>
+          <span>جامعة الشرقية<span class="hide-sm">&nbsp;· كلية الآداب والعلوم الإنسانية</span></span>
+        </div>
+      </div>
       <header class="site-header">
         <div class="header-inner">
           <a class="brand" href="${brandHref()}" aria-label="اللسان العماني — الصفحة الرئيسية">
             <span class="brand-mark">${LOGO_MARK}</span>
             <span class="brand-text">
               <strong>اللسان العماني</strong>
-              <small>منصة الظواهر الدلالية</small>
+              <small>منصة الظواهر الدلالية في اللغة العربية</small>
             </span>
           </a>
           <nav class="site-nav" aria-label="التنقل الرئيسي">${navHtml(current)}</nav>
           <button class="nav-toggle" id="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="site-drawer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
           </button>
         </div>
       </header>
@@ -76,9 +85,9 @@
             <div class="footer-brand">
               <a class="brand" href="index.html" aria-label="اللسان العماني — الرئيسية">
                 <span class="brand-mark">${LOGO_MARK}</span>
-                <span class="brand-text"><strong>اللسان العماني</strong><small>منصة الظواهر الدلالية</small></span>
+                <span class="brand-text"><strong>اللسان العماني</strong></span>
               </a>
-              <p>منصة عربية تعنى بدراسة الظواهر الدلالية في اللغة العربية: الترادف والتضاد، والكلمات الدخيلة، والحقول الدلالية، وأدوات تفاعلية للتعلم والاستكشاف.</p>
+              <p>متّسع رقمي لدراسة الظواهر الدلالية في العربية: الترادف والتضاد، والكلمات الدخيلة، والحقول الدلالية، وأدوات تعلّم تعمل في المتصفح.</p>
             </div>
             <div class="footer-col">
               <h3>الأدوات</h3>
@@ -97,24 +106,24 @@
               <a href="https://github.com/qmsweb/LisanOmani" target="_blank" rel="noopener">المستودع على GitHub</a>
             </div>
             <div class="footer-col">
-              <h3>عن النسخة</h3>
+              <h3>عن الطبعة</h3>
               <div class="footer-note">
-                <span class="badge badge-gold">الإصدار 1.0</span>
-                <p style="margin:0">موقع ثابت سريع وآمن، يعمل دون خادم أو قاعدة بيانات، ويمكن استضافته مجانًا على GitHub Pages.</p>
+                <span class="badge">الإصدار 2.0</span>
+                <p style="margin:0">موقع ثابت يعمل دون خادم أو قاعدة بيانات، ويعتمد ملفات JSON قابلة للتحرير.</p>
               </div>
-              <p style="margin:16px 0 0">
+              <p style="margin:14px 0 0">
                 <a href="https://github.com/qmsweb/LisanOmani/issues/new" target="_blank" rel="noopener">أبلغ عن مشكلة</a>
               </p>
             </div>
           </div>
           <div class="footer-bottom">
             <span>© <span id="year">2026</span> اللسان العماني — جميع الحقوق محفوظة.</span>
-            <span>صُنع بعناية لخدمة اللغة العربية · <a href="about.html">عن المشروع</a></span>
+            <span>نسخة مراجعة غير مفهرسة · <a href="about.html">عن المشروع</a></span>
           </div>
         </div>
       </footer>
       <button class="to-top" id="to-top" aria-label="العودة إلى أعلى الصفحة">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       </button>`;
   }
 
@@ -201,7 +210,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.1 });
       reveals.forEach(function (el) { observer.observe(el); });
     } else {
       reveals.forEach(function (el) { el.classList.add('visible'); });

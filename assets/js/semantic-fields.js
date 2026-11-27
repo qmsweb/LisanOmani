@@ -23,12 +23,12 @@
   }
 
   const TYPES = {
-    core: { label: 'مفهوم مركزي', color: '#0e6666' },
-    event: { label: 'حدث', color: '#e76f51' },
-    actor: { label: 'فاعل', color: '#2a9d8f' },
-    method: { label: 'طريقة أو وسيلة', color: '#e9c46a' },
-    emotion: { label: 'عاطفة', color: '#9b5de5' },
-    result: { label: 'نتيجة', color: '#457b9d' }
+    core: { label: 'مفهوم مركزي', color: '#191510' },
+    event: { label: 'حدث', color: '#9c3b1b' },
+    actor: { label: 'فاعل', color: '#2e4034' },
+    method: { label: 'طريقة أو وسيلة', color: '#b08652' },
+    emotion: { label: 'عاطفة', color: '#6b4f63' },
+    result: { label: 'نتيجة', color: '#47616b' }
   };
 
   let catalog = [];
@@ -95,7 +95,7 @@
     zoomGroup = svg.append('g');
 
     const linkSelection = zoomGroup.append('g')
-      .attr('stroke', '#b8ccc9')
+      .attr('stroke', '#d5cab7')
       .attr('stroke-opacity', 0.75)
       .selectAll('line')
       .data(links)
@@ -113,7 +113,7 @@
     nodeSelection.append('circle')
       .attr('r', function (node) { return nodeRadius(node); })
       .attr('fill', function (node) { return (TYPES[node.type] || TYPES.core).color; })
-      .attr('stroke', '#ffffff')
+      .attr('stroke', '#fbf7ef')
       .attr('stroke-width', 2.5)
       .style('filter', 'drop-shadow(0 3px 6px rgba(6,78,78,.18))');
 
@@ -123,9 +123,9 @@
       .attr('font-family', 'Cairo, sans-serif')
       .attr('font-size', function (node) { return node.type === 'core' ? 14 : 12; })
       .attr('font-weight', function (node) { return node.type === 'core' ? 800 : 700; })
-      .attr('fill', '#12302e')
+      .attr('fill', '#191510')
       .attr('paint-order', 'stroke')
-      .attr('stroke', '#ffffff')
+      .attr('stroke', '#fbf7ef')
       .attr('stroke-width', 4)
       .attr('stroke-linejoin', 'round')
       .text(function (node) { return node.label || node.id; });
@@ -212,14 +212,14 @@
 
   function selectNode(node, nodeSelection, linkSelection) {
     nodeSelection.select('circle')
-      .attr('stroke', function (item) { return item === node ? '#c9972f' : '#ffffff'; })
+      .attr('stroke', function (item) { return item === node ? '#c8804f' : '#fbf7ef'; })
       .attr('stroke-width', function (item) { return item === node ? 4.5 : 2.5; });
 
     nodeSelection.attr('opacity', 1);
 
     linkSelection
       .attr('stroke', function (link) {
-        return link.source === node || link.target === node ? '#c9972f' : '#b8ccc9';
+        return link.source === node || link.target === node ? '#c8804f' : '#d5cab7';
       })
       .attr('stroke-opacity', function (link) {
         return link.source === node || link.target === node ? 1 : 0.22;
@@ -242,10 +242,10 @@
     nodeSelection
       .attr('opacity', 1)
       .select('circle')
-      .attr('stroke', '#ffffff')
+      .attr('stroke', '#fbf7ef')
       .attr('stroke-width', 2.5);
     linkSelection
-      .attr('stroke', '#b8ccc9')
+      .attr('stroke', '#d5cab7')
       .attr('stroke-opacity', 0.75);
     nodeInfo.innerHTML = '<p class="muted small" style="margin:0">اضغط على أي عقدة في الخريطة لعرض تعريفها وأمثلتها هنا.</p>';
   }
@@ -266,7 +266,7 @@
     }
 
     if (examples.length) {
-      html += '<div class="section-label" style="margin-top:6px">أمثلة</div><ul style="margin:0;font-size:.88rem;color:#5a7370">';
+      html += '<div class="section-label" style="margin-top:6px">أمثلة</div><ul style="margin:0;font-size:.88rem;color:#6d6455">';
       examples.forEach(function (example) {
         html += '<li>' + escapeHtml(example) + '</li>';
       });
@@ -348,7 +348,7 @@
     const background = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     background.setAttribute('width', '100%');
     background.setAttribute('height', '100%');
-    background.setAttribute('fill', '#ffffff');
+    background.setAttribute('fill', '#fbf7ef');
     clone.insertBefore(background, clone.firstChild);
 
     const source = new XMLSerializer().serializeToString(clone);
@@ -360,7 +360,7 @@
       canvas.width = width * scale;
       canvas.height = height * scale;
       const context = canvas.getContext('2d');
-      context.fillStyle = '#ffffff';
+      context.fillStyle = '#fbf7ef';
       context.fillRect(0, 0, canvas.width, canvas.height);
       context.setTransform(scale, 0, 0, scale, 0, 0);
       context.drawImage(image, 0, 0, width, height);
