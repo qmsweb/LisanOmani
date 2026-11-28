@@ -155,20 +155,6 @@ code {
   color: var(--ink);
   min-width: 0;
 }
-.brand-mark {
-  width: 30px;
-  height: 30px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1;
-  padding-bottom: 3px;
-}
 .brand-logo {
   display: block;
   height: 32px;
@@ -1227,7 +1213,6 @@ tbody tr:last-child td { border-bottom: 0; }
   .header-inner { padding-inline: 14px; gap: 8px; }
   .brand { gap: 8px; }
   .brand-logo { height: 26px; }
-  .brand-mark { width: 28px; height: 28px; font-size: .9rem; }
   .menu-btn { width: 44px; height: 44px; margin-inline-start: -6px; }
   .site-menu a { padding: 13px 20px; font-size: 1rem; }
 
