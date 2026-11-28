@@ -10,6 +10,18 @@
 
   let entries = [];
 
+  function showSkeletons() {
+    list.innerHTML = Array.from({ length: 5 }, function () {
+      return `
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="skeleton skeleton-line skeleton-line-label"></div>
+          <div class="skeleton skeleton-line skeleton-line-title"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line-short"></div>
+        </div>`;
+    }).join('');
+  }
+
   function render() {
     const query = normalizeArabic(input.value);
     const filtered = entries.filter(function (entry) {
@@ -21,6 +33,7 @@
 
     if (!filtered.length) {
       list.innerHTML = '<div class="empty-state"><b>لا توجد نتائج</b>جرّب كلمة من المثل أو موضوعه.</div>';
+      list.classList.add('is-ready');
       return;
     }
 
@@ -35,9 +48,11 @@
           <p class="proverb-meaning">${escapeHtml(entry.meaning)}</p>
         </article>`;
     }).join('');
+    list.classList.add('is-ready');
   }
 
   function init() {
+    showSkeletons();
     fetchJSON('data/proverbs.json').then(function (data) {
       entries = data.entries || [];
       const noteEl = document.getElementById('proverb-note');

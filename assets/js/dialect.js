@@ -12,6 +12,18 @@
   let entries = [];
   let note = '';
 
+  function showSkeletons() {
+    results.innerHTML = Array.from({ length: 6 }, function () {
+      return `
+        <div class="skeleton-card" aria-hidden="true">
+          <div class="skeleton skeleton-line skeleton-line-title"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line-short"></div>
+          <div class="skeleton skeleton-line skeleton-line-meta"></div>
+        </div>`;
+    }).join('');
+  }
+
   function render() {
     const query = normalizeArabic(input.value);
     const region = regionSelect.value;
@@ -27,6 +39,7 @@
 
     if (!filtered.length) {
       results.innerHTML = '<div class="empty-state"><b>لا توجد نتائج</b>جرّب كلمة أخرى أو أزل التصفية.</div>';
+      results.classList.add('is-ready');
       return;
     }
 
@@ -42,6 +55,7 @@
           ${entry.note ? `<p class="entry-note">${escapeHtml(entry.note)}</p>` : ''}
         </article>`;
     }).join('');
+    results.classList.add('is-ready');
   }
 
   function fillRegions() {
@@ -53,6 +67,7 @@
   }
 
   function init() {
+    showSkeletons();
     fetchJSON('data/dialect.json').then(function (data) {
       entries = data.entries || [];
       note = data.note || '';

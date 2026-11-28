@@ -23,6 +23,54 @@
     }).join('');
   }
 
+  const BOTTOM_NAV = [
+    {
+      href: 'index.html',
+      label: 'الرئيسية',
+      nav: 'home',
+      icon: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/>'
+    },
+    {
+      href: 'dialect.html',
+      label: 'المعجم',
+      nav: 'dialect',
+      icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/>'
+    },
+    {
+      href: 'map.html',
+      label: 'الخريطة',
+      nav: 'map',
+      icon: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'
+    },
+    {
+      href: 'proverbs.html',
+      label: 'الأمثال',
+      nav: 'proverbs',
+      icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 8h8M8 12h5"/>'
+    },
+    {
+      href: 'assistant.html',
+      label: 'المساعد',
+      nav: 'assistant',
+      icon: '<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/>'
+    }
+  ];
+
+  function bottomNavHtml(current) {
+    return `
+      <nav class="bottom-nav" aria-label="التنقل السريع">
+        ${BOTTOM_NAV.map(function (item) {
+          const currentAttr = item.nav === current ? ' aria-current="page"' : '';
+          return `<a href="${item.href}"${currentAttr}>
+            <span class="bottom-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${item.icon}</svg>
+            </span>
+            <span class="bottom-nav-label">${item.label}</span>
+          </a>`;
+        }).join('')}
+      </nav>`;
+  }
+
   function headerHtml(current) {
     return `
       <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
@@ -60,6 +108,14 @@
 
     if (headerMount) headerMount.innerHTML = headerHtml(current);
     if (footerMount) footerMount.innerHTML = footerHtml();
+
+    let bottomMount = document.getElementById('site-bottom');
+    if (!bottomMount) {
+      bottomMount = document.createElement('div');
+      bottomMount.id = 'site-bottom';
+      document.body.appendChild(bottomMount);
+    }
+    bottomMount.innerHTML = bottomNavHtml(current);
 
     const year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();
@@ -150,7 +206,8 @@
     escapeHtml: escapeHtml,
     fetchJSON: fetchJSON,
     getParam: getParam,
-    debounce: debounce
+    debounce: debounce,
+    bottomNavHtml: bottomNavHtml
   };
 
   if (document.readyState === 'loading') {

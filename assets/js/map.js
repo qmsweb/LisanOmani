@@ -60,6 +60,17 @@
     list.querySelectorAll('.region-btn').forEach(function (btn) {
       btn.addEventListener('click', function () { select(btn.dataset.id); });
     });
+    list.classList.add('is-ready');
+  }
+
+  function showSkeletons() {
+    list.innerHTML = Array.from({ length: 6 }, function () {
+      return `
+        <div class="skeleton-row" aria-hidden="true">
+          <div class="skeleton skeleton-row-name"></div>
+          <div class="skeleton skeleton-row-capital"></div>
+        </div>`;
+    }).join('');
   }
 
   function initMap() {
@@ -111,6 +122,7 @@
   }
 
   function init() {
+    showSkeletons();
     fetchJSON('data/regions.json').then(function (data) {
       regions = data.regions || [];
       const noteEl = document.getElementById('map-note');
@@ -119,6 +131,7 @@
       detail.innerHTML = detailHtml(null);
       initMap();
     }).catch(function (error) {
+      list.innerHTML = '';
       detail.innerHTML = '<div class="error-state">' + escapeHtml(error.message) + '</div>';
     });
   }

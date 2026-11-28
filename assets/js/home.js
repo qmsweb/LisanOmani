@@ -15,6 +15,7 @@
   const suggestList = document.getElementById('home-suggest-list');
 
   const todaySection = document.getElementById('home-today');
+  const todayGrid = document.querySelector('.home-today-grid');
   const wordBlock = document.getElementById('home-word');
   const wordTitle = document.getElementById('home-word-title');
   const wordMeaning = document.getElementById('home-word-meaning');
@@ -42,7 +43,44 @@
   }
 
   function showToday() {
-    if (todaySection) todaySection.hidden = false;
+    updateToday();
+  }
+
+  function updateToday() {
+    if (!todaySection) return;
+    const hasWord = wordBlock && !wordBlock.hidden;
+    const hasProverb = proverbBlock && !proverbBlock.hidden;
+    const hasSkeleton = !!document.getElementById('home-word-skeleton') ||
+      !!document.getElementById('home-proverb-skeleton');
+    todaySection.hidden = !(hasWord || hasProverb || hasSkeleton);
+  }
+
+  function clearSkeleton(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+  }
+
+  function skeletonHtml(isWord) {
+    const id = isWord ? 'home-word-skeleton' : 'home-proverb-skeleton';
+    return `
+      <article class="home-pick skeleton-card" id="${id}" aria-hidden="true">
+        <div class="skeleton skeleton-line skeleton-line-label"></div>
+        <div class="skeleton skeleton-line skeleton-line-title"></div>
+        <div class="skeleton skeleton-line"></div>
+        <div class="skeleton skeleton-line skeleton-line-short"></div>
+        <div class="skeleton skeleton-line skeleton-line-meta"></div>
+      </article>`;
+  }
+
+  function showTodaySkeletons() {
+    if (!todayGrid) return;
+    if (!document.getElementById('home-word-skeleton')) {
+      todayGrid.insertAdjacentHTML('beforeend', skeletonHtml(true));
+    }
+    if (!document.getElementById('home-proverb-skeleton')) {
+      todayGrid.insertAdjacentHTML('beforeend', skeletonHtml(false));
+    }
+    updateToday();
   }
 
   function fillWord(entry) {
@@ -137,17 +175,25 @@
     Lisan.fetchJSON('data/dialect.json').then(function (data) {
       dialectEntries = data.entries || [];
       fillWord(pickOfDay(dialectEntries, 0));
+      clearSkeleton('home-word-skeleton');
+      updateToday();
       renderSuggestions();
     }).catch(function () {
       if (wordBlock) wordBlock.hidden = true;
+      clearSkeleton('home-word-skeleton');
+      updateToday();
     });
   }
 
   function initProverb() {
     Lisan.fetchJSON('data/proverbs.json').then(function (data) {
       fillProverb(pickOfDay(data.entries || [], 3));
+      clearSkeleton('home-proverb-skeleton');
+      updateToday();
     }).catch(function () {
       if (proverbBlock) proverbBlock.hidden = true;
+      clearSkeleton('home-proverb-skeleton');
+      updateToday();
     });
   }
 
@@ -165,6 +211,7 @@
     });
   }
 
+  showTodaySkeletons();
   initWord();
   initProverb();
 })();

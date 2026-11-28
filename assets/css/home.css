@@ -318,6 +318,14 @@
   .home-row:hover .home-row-arrow svg { transform: translateX(-3px); }
 }
 
+/* ---------- الجوال ---------- */
+
+@media (max-width: 700px) {
+  .home-pick-foot {
+    margin-top: 16px;
+  }
+}
+
 /* ---------- الشاشات الواسعة ---------- */
 
 @media (min-width: 760px) {
