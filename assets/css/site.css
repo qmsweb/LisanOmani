@@ -169,10 +169,11 @@ code {
   line-height: 1;
   padding-bottom: 3px;
 }
-.brand-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  white-space: nowrap;
+.brand-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  flex: none;
 }
 
 .site-menu {
@@ -1225,7 +1226,7 @@ tbody tr:last-child td { border-bottom: 0; }
 
   .header-inner { padding-inline: 14px; gap: 8px; }
   .brand { gap: 8px; }
-  .brand-name { font-size: 1rem; }
+  .brand-logo { height: 26px; }
   .brand-mark { width: 28px; height: 28px; font-size: .9rem; }
   .menu-btn { width: 44px; height: 44px; margin-inline-start: -6px; }
   .site-menu a { padding: 13px 20px; font-size: 1rem; }

@@ -30,7 +30,7 @@
         <div class="header-inner">
           <a class="brand" href="index.html" aria-label="اللسان العماني — الصفحة الرئيسية">
             <span class="brand-mark" aria-hidden="true">ل</span>
-            <span class="brand-name">اللسان العماني</span>
+            <img class="brand-logo" src="assets/img/logo-wordmark.png" alt="اللسان العماني" width="1036" height="219">
           </a>
 
           <button class="menu-btn" id="menu-btn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="site-menu">
