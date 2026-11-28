@@ -1,0 +1,373 @@
+/* ============================================================
+   الرئيسية — تنسيقات محصورة في صفحة index.html
+   تعتمد رموز site.css نفسها؛ لا تمسّ الصفحات الداخلية.
+   ============================================================ */
+
+.home {
+  --home-rule: var(--line-soft);
+}
+
+/* ---------- المقدمة التحريرية ---------- */
+
+.home-hero {
+  padding: clamp(40px, 8vw, 64px) 0 clamp(26px, 4vw, 44px);
+}
+
+.home-hero-inner {
+  max-width: 880px;
+}
+
+.home-hero h1 {
+  margin: 0;
+  font-size: clamp(2.15rem, 6.2vw, 3.7rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--ink);
+  animation: home-in .55s var(--ease) backwards;
+}
+
+.home-lede {
+  max-width: 52ch;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  line-height: 1.95;
+  animation: home-in .55s var(--ease) .06s backwards;
+}
+
+/* ---------- البحث ---------- */
+
+.home-search {
+  max-width: 620px;
+  margin-top: clamp(26px, 4vw, 38px);
+  animation: home-in .55s var(--ease) .12s backwards;
+}
+
+.home-search-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.home-search-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 50px;
+  padding: 12px 16px;
+  background: var(--card);
+  font-size: 1rem;
+}
+
+.home-search-btn {
+  flex: none;
+  min-height: 50px;
+  padding-inline: 22px;
+  font-size: .92rem;
+}
+
+.home-search-hint {
+  margin: 10px 2px 0;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.8;
+}
+
+.home-suggest {
+  margin-top: 12px;
+  padding: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.home-suggest-label {
+  margin: 2px 8px 6px;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 600;
+}
+
+.home-suggest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-suggest-list a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 14px;
+  min-height: 44px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background .15s ease;
+}
+
+.home-suggest-word {
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.home-suggest-meaning {
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+@media (hover: hover) {
+  .home-suggest-list a:hover { background: var(--accent-soft); }
+}
+
+/* ---------- عناوين الأشرطة ---------- */
+
+.home-band-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.home-band-head h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.32rem);
+}
+
+.home-band-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+/* ---------- مفردة اليوم ومثل اليوم ---------- */
+
+.home-today {
+  padding: 0 0 clamp(34px, 5vw, 56px);
+}
+
+.home-today-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.home-pick {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 3vw, 30px);
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: home-in .5s var(--ease) backwards;
+}
+
+.home-pick-label {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: .77rem;
+  font-weight: 600;
+}
+
+.home-pick-title {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.home-pick-body {
+  margin: 0;
+  color: var(--ink);
+  font-size: .96rem;
+  line-height: 1.9;
+}
+
+.home-pick-quote {
+  margin: 12px 0 0;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid var(--accent-soft);
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.85;
+}
+
+.home-pick-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: auto 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--home-rule);
+}
+
+.home-pick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 44px;
+  margin-inline-start: auto;
+  color: var(--accent);
+  font-size: .86rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.home-pick-link svg {
+  width: 15px;
+  height: 15px;
+  transition: transform .2s var(--ease);
+}
+
+@media (hover: hover) {
+  .home-pick-link:hover { color: var(--accent-ink); }
+  .home-pick-link:hover svg { transform: translateX(-3px); }
+}
+
+/* ---------- أقسام المنصة: قائمة تحريرية ---------- */
+
+.home-sections {
+  padding-bottom: clamp(54px, 9vw, 104px);
+}
+
+.home-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.home-index li + li {
+  border-top: 1px solid var(--home-rule);
+}
+
+.home-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 14px;
+  color: inherit;
+  text-decoration: none;
+  transition: background .18s var(--ease);
+}
+
+.home-row-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition: background .18s var(--ease), color .18s var(--ease);
+}
+
+.home-row-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.home-row-text {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.home-row-title {
+  color: var(--ink);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.home-row-desc {
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.home-row-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+.home-row-arrow svg {
+  width: 17px;
+  height: 17px;
+  transition: transform .18s var(--ease);
+}
+
+@media (hover: hover) {
+  .home-row:hover { background: #fbfbf8; }
+  .home-row:hover .home-row-icon { background: var(--accent); color: #fff; }
+  .home-row:hover .home-row-arrow svg { transform: translateX(-3px); }
+}
+
+/* ---------- الشاشات الواسعة ---------- */
+
+@media (min-width: 760px) {
+  .home-today-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    gap: 18px;
+  }
+
+  .home-pick:nth-child(2) { animation-delay: .06s; }
+}
+
+@media (min-width: 900px) {
+  .home-row {
+    grid-template-columns: 52px minmax(0, 1fr) 20px;
+    gap: 22px;
+    padding: 20px 26px;
+  }
+
+  .home-row-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .home-row-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-row-text {
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .home-row-title { font-size: 1.06rem; }
+  .home-row-desc { font-size: .9rem; }
+}
+
+/* ---------- الحركة ---------- */
+
+@keyframes home-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home *,
+  .home *::before,
+  .home *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

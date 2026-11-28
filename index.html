@@ -22,54 +22,138 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body data-nav="home">
   <div id="site-header"></div>
 
-  <main id="main">
-    <h1 class="sr-only">اللسان العماني — المعجم اللهجي والأمثال</h1>
-
-    <section class="intro">
+  <main id="main" class="home">
+    <section class="home-hero" aria-labelledby="home-title">
       <div class="container">
-        <p>منصة عمانية تجمع المفردات اللهجية والأمثال، وتضعها على الخريطة.</p>
+        <div class="home-hero-inner">
+          <h1 id="home-title">المفردة العمانية،<br>في معناها وشاهدها.</h1>
+          <p class="home-lede">معجم للمفردات اللهجية، وخريطة لمناطق تداولها، وأمثال متداولة، ومساعد يجيب من بيانات المنصة.</p>
+
+          <form class="home-search" action="dialect.html" method="get" role="search">
+            <label class="sr-only" for="home-q">ابحث في المعجم اللهجي</label>
+            <div class="home-search-row">
+              <input id="home-q" name="q" type="search" placeholder="ابحث عن مفردة أو معنى…" autocomplete="off" enterkeyhint="search">
+              <button class="btn home-search-btn" type="submit">ابحث</button>
+            </div>
+            <p class="home-search-hint" id="home-search-hint">تظهر المفردات القريبة أثناء الكتابة، وينقلك البحث إلى المعجم.</p>
+            <div class="home-suggest" id="home-suggest" aria-live="polite" hidden>
+              <p class="home-suggest-label">مفردات قريبة</p>
+              <ul class="home-suggest-list" id="home-suggest-list"></ul>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
-    <section aria-label="أقسام المنصة">
+    <section class="home-today" id="home-today" aria-labelledby="home-today-title" hidden>
       <div class="container">
-        <div class="cards">
-          <a class="card" href="dialect.html">
-            <span class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg>
-            </span>
-            <h3>المعجم اللهجي</h3>
-            <p>مفردات عمانية بمعانيها وشواهدها ومناطق تداولها.</p>
-          </a>
-
-          <a class="card" href="map.html">
-            <span class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            <h3>الخريطة</h3>
-            <p>توزيع المناطق اللهجية على خريطة عُمان.</p>
-          </a>
-
-          <a class="card" href="proverbs.html">
-            <span class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 8h8M8 12h5"/></svg>
-            </span>
-            <h3>الأمثال</h3>
-            <p>أمثال متداولة ومعانيها وموضوعاتها.</p>
-          </a>
-
-          <a class="card" href="assistant.html">
-            <span class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>
-            </span>
-            <h3>المساعد الذكي</h3>
-            <p>اسأل عن معنى مفردة أو مثل أو منطقة.</p>
-          </a>
+        <div class="home-band-head">
+          <h2 id="home-today-title">من اليوم</h2>
+          <p>اختيار واحد من المعجم، وآخر من الأمثال.</p>
         </div>
+
+        <div class="home-today-grid">
+          <article class="home-pick" id="home-word" aria-labelledby="home-word-title" hidden>
+            <p class="home-pick-label">مفردة اليوم</p>
+            <h3 class="home-pick-title" id="home-word-title"></h3>
+            <p class="home-pick-body" id="home-word-meaning"></p>
+            <p class="home-pick-quote" id="home-word-example"></p>
+            <p class="home-pick-foot">
+              <span class="badge badge-soft" id="home-word-region"></span>
+              <a class="home-pick-link" id="home-word-link" href="dialect.html">إلى المعجم
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </a>
+            </p>
+          </article>
+
+          <article class="home-pick" id="home-proverb" aria-labelledby="home-proverb-title" hidden>
+            <p class="home-pick-label">مثل اليوم</p>
+            <h3 class="home-pick-title" id="home-proverb-title"></h3>
+            <p class="home-pick-body" id="home-proverb-meaning"></p>
+            <p class="home-pick-foot">
+              <span class="badge badge-soft" id="home-proverb-theme"></span>
+              <a class="home-pick-link" id="home-proverb-link" href="proverbs.html">إلى الأمثال
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-sections" aria-labelledby="home-sections-title">
+      <div class="container">
+        <div class="home-band-head">
+          <h2 id="home-sections-title">أقسام المنصة</h2>
+          <p>أربعة مداخل إلى المادة نفسها.</p>
+        </div>
+
+        <ul class="home-index">
+          <li>
+            <a class="home-row" href="dialect.html">
+              <span class="home-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg>
+              </span>
+              <span class="home-row-text">
+                <span class="home-row-title">المعجم اللهجي</span>
+                <span class="home-row-desc">مفردات عمانية بمعانيها وشواهدها ومناطق تداولها.</span>
+              </span>
+              <span class="home-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="home-row" href="map.html">
+              <span class="home-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span class="home-row-text">
+                <span class="home-row-title">الخريطة</span>
+                <span class="home-row-desc">توزيع المناطق اللهجية على خريطة عُمان.</span>
+              </span>
+              <span class="home-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="home-row" href="proverbs.html">
+              <span class="home-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 8h8M8 12h5"/></svg>
+              </span>
+              <span class="home-row-text">
+                <span class="home-row-title">الأمثال</span>
+                <span class="home-row-desc">أمثال متداولة ومعانيها وموضوعاتها.</span>
+              </span>
+              <span class="home-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="home-row" href="assistant.html">
+              <span class="home-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>
+              </span>
+              <span class="home-row-text">
+                <span class="home-row-title">المساعد الذكي</span>
+                <span class="home-row-desc">اسأل عن معنى مفردة أو مثل أو منطقة.</span>
+              </span>
+              <span class="home-row-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -77,5 +161,6 @@
   <div id="site-footer"></div>
 
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/home.js"></script>
 </body>
 </html>
